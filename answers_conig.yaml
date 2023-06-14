@@ -1,0 +1,213 @@
+- question_slug: initials
+  type: text
+- answer_scores:
+    Man: 0
+    Non-binary: 0
+    Prefer not to say: 0
+    Woman: 0
+  question_slug: gender
+  type: single_select
+- answer_scores:
+    18 - 35: 0
+    36 - 50: 0
+    '< 18': 0
+    Above 50: 0
+  question_slug: age
+  type: single_select
+- question_slug: address
+  type: text
+- answer_scores:
+    Business owner: 0
+    Not working: 0
+    Prefer not to say: 0
+    Student: 0
+    Work: 0
+  question_slug: occupation
+  type: single_select
+- question_slug: income
+  type: text
+- answer_scores:
+    'No': 0
+    'Yes': 1
+  question_slug: have_prev_diagnosis
+  type: single_select
+- answer_scores:
+    Anxiety: 1
+    PTSD: 1
+    Substance Abuse: 1
+    Trauma: 1
+  question_slug: felt_condition
+  type: single_select
+- answer_scores:
+    Daily: 3
+    Monthly: 2
+    Seasonal: 1.5
+    Weekly: 2.5
+    Yearly: 1
+  question_slug: experienced_symptoms
+  type: single_select
+- question_slug: medication_text
+  type: text
+- answer_scores:
+    'No': 2
+    'Yes': 1
+  question_slug: treatment_receieved_past
+  type: single_select
+- answer_scores:
+    'No': 2
+    'Yes': 1
+  question_slug: treatment_receieved_present
+  type: single_select
+- answer_scores:
+    Anger: 1
+    Annoyed: 1
+    Depression: 1
+    Grief: 1
+    Loneliness: 1
+  question_slug: daily_effect_general
+  type: multi_select
+- answer_scores:
+    Anxiety: 1
+    PTSD: 1
+    Substance Abuse: 1
+    Trauma: 1
+  question_slug: mental_condition
+  type: single_select
+- answer_scores:
+    '< 1 year': 2
+    < 3 months ago: 4
+    < 6 months ago: 3
+    '> 1 year': 1
+  question_slug: last_symptom
+  type: single_select
+- answer_scores:
+    'No': 2
+    'Yes': 0
+  question_slug: present_treatment
+  type: single_select
+- answer_scores:
+    A lot: 1
+    Adequate: 1.5
+    Moderate: 2
+    Not really: 2.5
+  question_slug: therapist_support
+  type: single_select
+- answer_scores:
+    None of the above: 0
+    Prone to more anger: 1
+    Prone to more grief: 1
+    Prone to more irritability: 1
+    Prone to more isolation: 1
+  question_slug: daily_affect
+  type: multi_select
+- answer_scores:
+    None of the above: 0
+    Prone to more irritability: 0.25
+    To have better relationships: 0.25
+    To help me relax: 0.25
+    To smile again: 0.25
+  question_slug: goals
+  type: multi_select
+- answer_scores:
+    To be happy: 0.25
+    To feel better at work or school: 0.25
+    To feel relax: 0.25
+    To have better relationships: 0.25
+    To learn coping strategies: 0.25
+  question_slug: expectations
+  type: multi_select
+- answer_scores:
+    To be happy: 0.25
+    To feel better at work or school: 0.25
+    To feel relax: 0.25
+    To have better relationships: 0.25
+    To learn coping strategies: 0.25
+  question_slug: expectations
+  type: multi_select
+- answer_scores:
+    Mostly at the workplaces: 0.5
+    Mostly with my friends: 0.5
+    No in other environments: 0.5
+    No not at all: 0
+    Yes mostly with my family: 0.5
+  question_slug: relationship_changes
+  type: multi_select
+- answer_scores:
+    A little bit: 0.5
+    Extremely: 2
+    Moderately: 1
+    Not at all: 0
+    Quite a bit: 1.5
+  question_slug: sleep_impact
+  type: single_select
+- answer_scores:
+    A little bit: 0.5
+    Extremely: 2
+    Moderately: 1
+    Not at all: 0
+    Quite a bit: 1.5
+  question_slug: sleep_patterns
+  type: single_select
+- answer_scores:
+    A little bit: 0.5
+    Extremely: 2
+    Moderately: 1
+    Not at all: 0
+    Quite a bit: 1.5
+  question_slug: mood_general
+  type: single_select
+- answer_scores:
+    Anger/Frustration: 0.5
+    Happiness/Euphoric: 0
+    None of the above: 0
+    Overwhelmed/Stimulated: 0.5
+    Sadness/Depressed: 0.5
+  question_slug: mood_change
+  type: multi_select
+- question_slug: general_effect_text
+  type: text
+- answer_scores:
+    A little bit: 0.5
+    Extremely: 2
+    Moderately: 1
+    Not at all: 0
+    Quite a bit: 1.5
+  question_slug: financial
+  type: single_select
+- answer_scores:
+    No, I need to human connection: 0.5
+    No, I need to stay active, no I am not interested for now: 0
+    Yes, I would use it daily: 2
+    Yes, I would use it monthly: 1
+    Yes, I would use it weekly: 1.5
+  question_slug: chance
+  type: single_select
+- question_slug: cope_text
+  type: text
+- answer_scores:
+    'No': 0
+    'Yes': 2
+  question_slug: comfortable_treatment
+  type: single_select
+- question_slug: helpful_treatment_text
+  type: text
+- answer_scores:
+    Anxiety: 1
+    PTSD: 1
+    Substance Abuse: 1
+    Trauma: 1
+  question_slug: more_concerns
+  type: single_select
+- answer_scores:
+    < 1 year: 1.75
+    < 3 months: 1
+    < 6 months: 1.5
+    '> 1 year': 2
+  question_slug: history_sud
+  type: single_select
+- question_slug: feeling_present_text
+  type: text
+- question_slug: preferred_therapy
+  type: text
+- question_slug: consent_agreement
+  type: text
