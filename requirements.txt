@@ -1,8 +1,0 @@
-Flask==2.2.3
-Flask_Mail==0.9.1
-pymongo==4.3.3
-python-dotenv==1.0.0
-PyYAML==6.0
-google-cloud-translate==3.11.1
-torch==2.0.0
-transformers==4.27.1
