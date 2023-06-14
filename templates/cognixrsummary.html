@@ -1,0 +1,241 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:v="urn:schemas-microsoft-com:vml" lang="en">
+<head>
+  <link rel="stylesheet" type="text/css" hs-webfonts="true"
+    href="https://fonts.googleapis.com/css?family=Lato|Lato:i,b,bi" />
+  <title>CogniXR</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style type="text/css">
+    a {
+      text-decoration: underline;
+      color: inherit;
+      font-weight: bold;
+      color: #253342;
+    }
+    strong {
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 56px;
+    }
+    h2 {
+      font-size: 28px;
+      font-weight: 900;
+    }
+    p {
+      font-weight: 100;
+    }
+    td {
+      vertical-align: top;
+    }
+    #email {
+      margin: auto;
+      width: 800px;
+      background-color: white;
+    }
+    button {
+      font: inherit;
+      background-color: #ff7a59;
+      border: none;
+      padding: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+      color: white;
+      border-radius: 5px;
+      box-shadow: 3px 3px #d94c53;
+    }
+    .subtle-link {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #cbd6e2;
+    }
+  </style>
+</head>
+<body style="background-color: #F5F8FA;
+      width: 100%;
+      margin: auto 0;
+      padding: 0;
+      font-family: Lato, sans-serif;
+      font-size: 18px;
+      color: #33475b;
+      word-break: break-word;
+    ">
+  <div id="email">
+    <!--Banner -->
+    <table role="presentation" width="100%">
+      <tr>
+        <td style="color: white; background-color: #253668; padding: 10% 0; text-align: center;">
+          <img alt="Flower"
+            src="https://acet.ca/wp-content/uploads/2022/09/cogni-logo-qualite-aspect-ratio-3878-925.png" width="400px"
+            align="middle" />
+        </td>
+      </tr>
+    </table>
+
+    <!--First Row Severity -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 0px 30px 30px 60px">
+      <tr>
+        <td>
+          <h2>Patient Summary</h2>
+          {% if severity == 'GREEN' %}
+          {% set color = 'green' %}
+          {% set severity_text = 'Green' %}
+          {% elif severity == 'AMBER' %}
+          {% set color = 'orange' %}
+          {% set severity_text = 'Orange' %}
+          {% elif severity == 'RED' %}
+          {% set color = 'red' %}
+          {% set severity_text = 'Red' %}
+          {% endif %}
+          <div style="display: flex;">
+            <span
+              style="height: 25px; width: 25px; background-color: {{ color }}; border-radius: 50%; display: inline-block;"></span>
+            <div style="margin-left: 5%; display: inline-block;"><strong>Severity: </strong>{{ severity_text }}</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <!--Second Row Demographics -->
+    <table role="presentation" border="0" cellpadding="0" cellspacing="10px" style="padding: 0 30px 30px 60px">
+      <tr>
+        <td>
+          <h2>Demographics</h2>
+          {% if gender == 'Man' %}
+          {% set identity = 'His' %}
+          {% set avatar = 'https://cdn-icons-png.flaticon.com/512/522/522348.png' %}
+          {% elif gender == 'Woman' %}
+          {% set identity = 'Her' %}
+          {% set avatar = 'https://cdn-icons-png.flaticon.com/512/2922/2922566.png' %}
+          {% else %}
+          {% set identity = 'His/Her' %}
+          {% set avatar = 'https://cdn-icons-png.flaticon.com/512/149/149071.png' %}
+          {% endif %}
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <img alt="Avatar" src="{{ avatar }}" width="200px" />
+        </td>
+        <td>
+          <p style="margin-top: 0;"><strong>Initials: </strong>{{ initials}}</p>
+          <p><strong>Gender: </strong>{{ gender }}</p>
+          <p><strong>Age: </strong> {{ age }}</p>
+          <p><strong>Country-Province/State: </strong>{{ address }}</p>
+          <p><strong>Occupation: </strong>{{ occupation }}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!--Thirt Row History -->
+    <table table role="presentation" border="0" cellpadding="0" cellspacing="10px" width="100%"
+      style="padding: 0px 30px 30px 60px">
+      <tr>
+        <td>
+          <h2>History</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0;"><strong>Had previous diagnosis: </strong>{{ have_prev_diagnosis or 'N/A'}}</p>
+          <p><strong>Experienced symptoms: </strong>{{ experienced_symptoms or 'N/A' }}</p>
+          <p><strong>Treatment Received in past: </strong>{{treatment_receieved_past or 'N/A'}}</p>
+          <p><strong>Receiving any treatments: </strong>{{treatment_receieved_present or 'N/A'}} </p>
+          <p><strong>Medication history: </strong>{{ medication_text or 'N/A' }}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!--Third Row Needs -->
+    <table table role="presentation" border="0" cellpadding="0" cellspacing="10px" width="100%"
+      style="padding: 0px 30px 30px 60px">
+      <tr>
+        <td>
+          <h2>Assessment Needs</h2>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0;"><strong>Condition: </strong> {{ mental_condition or felt_condition }}</p>
+          <p><strong>Affect on daily life: </strong> {{daily_affect or 'N/A'}}</p>
+          <p><strong>Affect on sleep pattern: </strong>{{sleep_patterns_ptsd}} {{sleep_patterns_anxiety}}
+            {{sleep_patterns_trauma}} {{sleep_patterns_sud}}</p>
+          <p><strong>Last experienced symptoms: </strong>{{last_symptom_ptsd}} {{last_symptom_anxiety}}
+            {{last_symptom_trauma}}{{history_sud}}</p>
+          <p><strong>Coping mechanism: </strong>{{cope_text_ptsd}} {{cope_text_anxiety}} {{cope_text_trauma}}
+            {{cope_text_sud}} </p>
+          <p><strong>Comfortable with treatment: </strong>{{comfortable_treatment_ptsd}} {{comfortable_treatment_anxiety}}
+              {{comfortable_treatment_trauma}} {{comfortable_treatment_sud}}</p>
+          <p><strong>Preferred treatment: </strong>{{ preferred_therapy or 'N/A' }}</p>
+        </td>
+      </tr>
+    </table>
+
+    <!--Forth Row Action Buttons -->
+    <!-- <table role="presentation" border="0" cellpadding="0" cellspacing="10px" width="100%"
+      style="padding: 0px 30px 30px 60px">
+      <tr>
+        <td>
+          <img alt="Blog"
+            src="https://www.hubspot.com/hubfs/assets/hubspot.com/style-guide/brand-guidelines/guidelines_sample-illustration-3.svg"
+            width="200px" align="middle" />
+
+          <h2>Vivamus ac elit eget</h2>
+          <p>
+            Vivamus ac elit eget dolor placerat tristique et vulputate nibh.
+            Sed in elementum nisl, quis mollis enim. Etiam gravida dui vel est
+            euismod, at aliquam ipsum euismod.
+          </p>
+        </td>
+
+        <td>
+          <img alt="Shopping"
+            src="https://www.hubspot.com/hubfs/assets/hubspot.com/style-guide/brand-guidelines/guidelines_sample-illustration-5.svg"
+            width="200px" align="middle" />
+          <h2>Suspendisse tincidunt iaculis</h2>
+          <p>
+            Suspendisse tincidunt iaculis fringilla. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            Cras laoreet elit purus, quis pulvinar ipsum pulvinar et.
+          </p>
+        </td>
+      </tr>
+
+      <tr>
+        <td><button>Button 2</button></td>
+        <td><button>Button 3</button></td>
+      </tr>
+    </table> -->
+
+    <!--Banner Row -->
+    <table role="presentation" bgcolor="#EAF0F6" width="100%" style="margin-top: 50px">
+      <tr>
+        <td align="center" style="padding: 30px 30px">
+          <h2>About CogniXR</h2>
+          <p>
+            CogniXR is an easy-to-use HIPAA-compliant platform that mission is to expand the reach of mental health care
+            so that wellness programs and health care providers support more people on their recovery journeys without
+            delay.
+          </p>
+          <a href="https://www.cognixrhealth.com/contact-8"> Ask us a question</a>
+        </td>
+      </tr>
+    </table>
+	<!--Info Row -->
+    <!-- <table role="presentation" bgcolor="#F5F8FA" width="100%">
+      <tr>
+        <td align="left" style="padding: 30px 30px">
+          <p style="color: #99acc2">Made with &hearts;</p>
+          <a class="subtle-link" href="#"> Unsubscribe </a>
+        </td>
+      </tr>
+    </table> -->
+  </div>
+</body>
+</html>
